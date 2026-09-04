@@ -1,0 +1,614 @@
+/* =========================================
+   MODERN DARK TEAL PORTFOLIO
+========================================= */
+
+:root {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --accent: #14B8A6;
+    --accent-light: #2DD4BF;
+    --border-color: rgba(20, 184, 166, 0.18);
+}
+
+[data-theme="light"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #E2E8F0;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --accent: #0D9488;
+    --accent-light: #14B8A6;
+    --border-color: rgba(13, 148, 136, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HEADER  (mobile-first base styles)
+========================================= */
+
+header {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(20, 184, 166, 0.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(45, 212, 191, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--bg-primary),
+            var(--bg-secondary),
+            #111827
+        );
+
+    color: var(--text-primary);
+    text-align: center;
+    padding: 55px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+
+    text-shadow:
+        0 0 20px rgba(20, 184, 166, 0.30);
+}
+
+header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    background: rgba(15, 23, 42, 0.96);
+    border-bottom: 1px solid rgba(20, 184, 166, 0.22);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--bg-primary);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-light)
+        );
+
+    box-shadow:
+        0 5px 25px rgba(20, 184, 166, 0.30);
+
+    transform: translateY(-2px);
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   MAIN AREA  (mobile-first base styles)
+========================================= */
+
+main {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 15px;
+}
+
+
+/* =========================================
+   GRID LAYOUTS
+========================================= */
+
+.skills-container,
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   SECTIONS  (mobile-first base styles)
+========================================= */
+
+section {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.98),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    padding: 28px 22px;
+    margin-bottom: 35px;
+    border-radius: 20px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.40),
+        0 0 25px rgba(20, 184, 166, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(20, 184, 166, 0.12),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+    top: -90px;
+    right: -60px;
+}
+
+section h2 {
+    color: var(--accent);
+    font-size: 27px;
+    margin-bottom: 20px;
+    position: relative;
+
+    text-shadow:
+        0 0 15px rgba(20, 184, 166, 0.20);
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent-light)
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px rgba(20, 184, 166, 0.35);
+}
+
+section h3 {
+    color: var(--accent-light);
+    font-size: 21px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+section p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+
+/* =========================================
+   LISTS
+========================================= */
+
+ul {
+    padding-left: 22px;
+}
+
+li {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   PROJECT / SKILL CARDS
+========================================= */
+
+.project,
+.project-card,
+.skill-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.95)
+        );
+
+    border: 1px solid rgba(20, 184, 166, 0.16);
+    border-left: 4px solid var(--accent);
+
+    padding: 28px;
+    margin: 22px 0;
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.project:hover,
+.project-card:hover,
+.skill-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--accent-light);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(20, 184, 166, 0.18);
+}
+
+.project h3,
+.project-card h3,
+.skill-card h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 14px;
+    align-self: flex-start;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: rgba(20, 184, 166, 0.12);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   CONTACT INFORMATION
+========================================= */
+
+.contact-info {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.90),
+            rgba(15, 23, 42, 0.95)
+        );
+
+    padding: 28px;
+    margin: 25px 0;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
+}
+
+.contact-info h3 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 22px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-light);
+}
+
+
+/* =========================================
+   CONTACT FORM  (mobile-first base styles)
+========================================= */
+
+form {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.98),
+            rgba(15, 23, 42, 0.98)
+        );
+
+    padding: 25px 20px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 15px;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.30);
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    color: var(--accent);
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+
+    color: var(--text-primary);
+
+    font-weight: 600;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(203, 213, 225, 0.25);
+
+    border-radius: 9px;
+
+    background: rgba(15, 23, 42, 0.80);
+
+    color: var(--text-primary);
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #64748B;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: var(--accent-light);
+
+    background: rgba(30, 41, 59, 0.95);
+
+    box-shadow:
+        0 0 0 3px rgba(45, 212, 191, 0.10),
+        0 0 25px rgba(20, 184, 166, 0.15);
+}
+
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+
+/* =========================================
+   SEND MESSAGE BUTTON
+========================================= */
+
+button {
+    display: block;
+
+    margin-left: auto;
+    margin-top: 22px;
+
+    padding: 14px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-light)
+        );
+
+    color: var(--bg-primary);
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(20, 184, 166, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(20, 184, 166, 0.40);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg-primary),
+            var(--bg-secondary)
+        );
+
+    color: var(--text-secondary);
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-top: 70px;
+
+    border-top:
+        1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================================
+   TABLET & UP  (mobile-first: scaling UP from here)
+========================================= */
+
+@media (min-width: 768px) {
+
+    header {
+        padding: 75px 20px 65px;
+    }
+
+    header h1 {
+        font-size: 50px;
+    }
+
+    header p {
+        font-size: 19px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    main {
+        margin: 60px auto;
+        padding: 0 25px;
+    }
+
+    section {
+        padding: 45px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    form {
+        padding: 35px;
+    }
+}
+
+
+/* =========================================
+   DESKTOP  (further refinement for large screens)
+========================================= */
+
+@media (min-width: 1024px) {
+
+    .skills-container,
+    .project-grid {
+        gap: 30px;
+    }
+}
