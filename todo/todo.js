@@ -113,16 +113,16 @@
     visible.forEach(task => fragment.appendChild(createTaskElement(task)));
     list.appendChild(fragment);
 
-    emptyState.hidden = tasks.length !== 0;
+    const emptyText = emptyState.querySelector('.empty-text');
+    emptyState.hidden = tasks.length !== 0 && visible.length !== 0;
     if (tasks.length === 0) {
-      emptyState.textContent = 'Nothing here yet. Add your first task above.';
+      emptyText.textContent = 'Nothing here yet. Add your first task above.';
     } else if (visible.length === 0) {
-      emptyState.hidden = false;
-      emptyState.textContent = `No ${currentFilter} tasks.`;
+      emptyText.textContent = `No ${currentFilter} tasks.`;
     }
 
     const remaining = tasks.filter(t => !t.completed).length;
-    taskCount.textContent = `${remaining} left`;
+    taskCount.textContent = remaining;
   }
 
   // ---------- Event delegation ----------
