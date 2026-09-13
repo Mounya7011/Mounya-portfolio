@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Task Log — Mounya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="todo.css">
 </head>
 <body>
@@ -17,9 +20,17 @@
   </header>
 
   <main class="wrap">
-    <section class="intro">
-      <h1>Task Log</h1>
-      <p>A small state-driven list. Add what needs doing, mark it off, filter the noise.</p>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Task 3</p>
+        <h1>Task&nbsp;Log</h1>
+        <p class="hero-sub">A running list of what needs doing. Add it, check it off, filter the noise.</p>
+      </div>
+      <div class="hero-stat">
+        <span id="task-count" class="stat-number">0</span>
+        <span class="stat-label">open</span>
+      </div>
     </section>
 
     <form id="task-form" class="entry-row">
@@ -40,16 +51,19 @@
         <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
         <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
       </div>
-      <span id="task-count" class="task-count">0 left</span>
+      <button id="clear-completed" type="button">Clear completed</button>
     </div>
 
     <ul id="task-list" class="task-list"></ul>
 
-    <p id="empty-state" class="empty-state" hidden>Nothing here yet. Add your first task above.</p>
-
-    <div class="list-footer">
-      <button id="clear-completed" type="button">Clear completed</button>
+    <div id="empty-state" class="empty-state" hidden>
+      <svg class="empty-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="4" width="28" height="34" rx="3" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M13 14h14M13 20h14M13 26h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <p class="empty-text">Nothing here yet. Add your first task above.</p>
     </div>
+
   </main>
 
   <footer class="site-footer">
