@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Log — Mounya</title>
+<link rel="stylesheet" href="todo.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">Mounya</a>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="todo.html" class="active">Task Log</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Task Log</h1>
+      <p>A small state-driven list. Add what needs doing, mark it off, filter the noise.</p>
+    </section>
+
+    <form id="task-form" class="entry-row">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="What needs doing?"
+        autocomplete="off"
+        maxlength="120"
+        required
+      >
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+      <span id="task-count" class="task-count">0 left</span>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>Nothing here yet. Add your first task above.</p>
+
+    <div class="list-footer">
+      <button id="clear-completed" type="button">Clear completed</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Task 3 — JavaScript Logic &amp; State Management</p>
+  </footer>
+
+  <script src="todo.js"></script>
+</body>
+</html>
